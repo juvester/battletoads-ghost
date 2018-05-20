@@ -1,6 +1,8 @@
 # Battletoads Ghost
 A Lua script for FCEUX that provides a speedrun ghost for Battletoads.
 
+![WireRash demo](gifs/WireRash-demo.gif) ![Mario demo](gifs/Mario-demo.gif)
+
 ## Why?
 So you can run against yourself and see exactly where and how you gain or lose those precious frames. In real time!
 
