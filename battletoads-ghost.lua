@@ -343,6 +343,8 @@ end
 
 savestate.registerload(onSavestateLoad)
 
+gui.opacity(OPACITY)
+
 while (true) do
     local currentFrame = recordCurrentFrame()
     currentFrames[frameNumber] = currentFrame
