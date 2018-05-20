@@ -30,7 +30,7 @@ You can change the model by opening `battletoads-ghost.lua` in a text editor and
 ## TODO
 * Save the ghost to a file so you can load it later or share it with others.
 * Level 12 (The Revolution) has some funky x-position magic that still needs to be figured out. A fixed x-position is used in the meantime.
-* Toggle ghost saving on/off with each SELECT press. Show some indicator wheter it's on/off.
+* Toggle ghost saving on/off with each SELECT press. Show some indicator whether it's on/off.
 
 ## Credits
 * 3DI70R: For the idea of saving and replaying runs on FCEUX. https://github.com/3DI70R/mari-o-fceux-replay-edition
