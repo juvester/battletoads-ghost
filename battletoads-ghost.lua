@@ -33,6 +33,24 @@ OPACITY = 1.0               -- A value between 0.0 and 1.0, where
 --###################################################################
 
 
+-- For BizHawk support
+if savestate.registerload == nil then
+    savestate.registerload = event.onloadstate
+
+    gui.opacity = function(alpha) end
+
+    memory.readbytesigned = memory.read_s8
+
+    memory.readwordsigned = function(addressLow, addressHigh)
+        return 0xFF * memory.read_s8(addressHigh) + memory.read_u8(addressLow)
+    end
+
+    joypad.getdown = joypad.get
+
+    gui.drawimage = function(dx, dy, gdStr)
+        gui.drawPixel(dx, dy, 0xFFFFFFFF)
+    end
+end
 
 -- "Globals", needed in onSavestateLoad() callback function
 local currentFrames = {}
@@ -354,7 +372,8 @@ while (true) do
         drawGhost(ghostFrame, sprites[toGhostSprite(ghostFrame.player1Sprite)])
     end
 
-    if (joypad.getdown(1)["select"]) then
+    local buttonsDown = joypad.getdown(1)
+    if (buttonsDown["select"] or buttonsDown["Select"]) then
         saveCurrentRun = true
     end
 
